@@ -58,11 +58,12 @@ app.post('/showlibrary', async (req, res) => {
         }
     })
     try {
-        await app.client.chat.postMessage({
+        await bolt.client.chat.postMessage({
             token: process.env.SLACK_TOKEN,
             channel: req.body.channel_id,
             blocks: blocks
         })
+        res();
     } catch (error) {
         console.log(error);
     }
