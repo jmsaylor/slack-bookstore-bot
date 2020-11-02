@@ -44,17 +44,30 @@ const Book = mongoose.model(
 app.post('/showlibrary', async (req, res) => {
 
     const books = await Book.find();
-    const blocks = books.map(book => {
-        return {
+
+    const blocks = [
+        {
+            type: "header",
+            text: {
+                type: "plain_text",
+                text: "School Library"
+            }
+        }
+    ];
+
+    books.forEach(book => {
+        blocks.push({
+            type: "section", 
             text: {
                 type: "mrkdwn",
                 text: book.title
             }, 
+            type: "section",
             text: {
                 type: "mrkdwn",
                 text: book.currentOwner
             }
-        }
+        })
     })
     try {
         await bolt.client.chat.postMessage({
