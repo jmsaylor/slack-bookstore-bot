@@ -55,19 +55,24 @@ app.post('/showlibrary', async (req, res) => {
         }
     ];
 
-    books.forEach(book => {
+    books.forEach((book) => {
+        blocks.push({
+            type: "divider"
+        });
         blocks.push({
             type: "section", 
             text: {
                 type: "mrkdwn",
                 text: book.title
-            }, 
+            }
+        });
+        blocks.push({
             type: "section",
             text: {
                 type: "mrkdwn",
                 text: book.currentOwner
             }
-        })
+        });
     })
     try {
         await bolt.client.chat.postMessage({
