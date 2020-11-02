@@ -46,10 +46,9 @@ app.post('/showlibrary', async (req, res) => {
     const books = await Book.find();
     const blocks = books.map(book => {
         return {
-            type: "section",
             text: {
                 type: "mrkdwn",
-                text: book.text
+                text: book.title
             }, 
             text: {
                 type: "mrkdwn",
