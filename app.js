@@ -49,7 +49,7 @@ app.post('/showlibrary', async (req, res) => {
             type: "section",
             text: {
                 type: "mrkdwn",
-                text: book.title
+                text: book.text
             }, 
             text: {
                 type: "mrkdwn",
@@ -63,7 +63,7 @@ app.post('/showlibrary', async (req, res) => {
             channel: req.body.channel_id,
             blocks: blocks
         })
-        res();
+        res.json();
     } catch (error) {
         console.log(error);
     }
