@@ -72,6 +72,14 @@ app.post('/showlibrary', async (req, res) => {
                     text: book.currentOwner
                 }
             ],
+            //TODO: put in accessory image
+        },
+        {
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: "Request transfer from current owner"
+            },
             accessory: {
                 type: "button",
                 text: {
@@ -81,11 +89,9 @@ app.post('/showlibrary', async (req, res) => {
                 value: book.title,
                 action: "checkout"
             }
+        
         });
-        // blocks.push({
-        //     type: "section",
-            
-        // });
+        
     })
     try {
         await bolt.client.chat.postMessage({
