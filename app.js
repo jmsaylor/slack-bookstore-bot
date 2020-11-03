@@ -67,6 +67,11 @@ app.post('/showlibrary', async (req, res) => {
             text: {
                 type: "mrkdwn",
                 text: book.title
+            },
+            accessory: {
+                type: "image",
+                image_url: "https://images-na.ssl-images-amazon.com/images/I/41-+g1a2Y1L._SX375_BO1,204,203,200_.jpg",
+                alt_text: "Photo of Book Cover"
             }
         });
 
@@ -93,7 +98,7 @@ app.post('/showlibrary', async (req, res) => {
                     emoji: true
                 },
                 value: book.title,
-                action_id: "checkout" + (Math.floor(Math.random() * 1000))
+                action_id: "checkout" + (Math.floor(Math.random() * 1000)) //TODO: better id system
             }
         });
     });
