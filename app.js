@@ -57,16 +57,19 @@ app.post('/showlibrary', async (req, res) => {
     ];
 
     books.forEach((book) => {
+
         blocks.push({
             type: "divider"
         });
+
         blocks.push({
             type: "section", 
             text: {
                 type: "mrkdwn",
                 text: book.title
-            },
+            }
         });
+
         blocks.push({
             type: "section",
             text: {
@@ -75,23 +78,23 @@ app.post('/showlibrary', async (req, res) => {
             }
         });
 
-        blocks.push({
-            type: "section",
-            text: {
-                type: "mrkdwn",
-                text: "Request transfer from current owner"
-            },
-            accessory: {
-                type: "button",
-                text: {
-                    type: "plain_text",
-                    text: "Checkout",
-                    emoji: true
-                },
-                value: book.title,
-                action: "checkout"
-            }
-        });
+        // blocks.push({
+        //     type: "section",
+        //     text: {
+        //         type: "mrkdwn",
+        //         text: "Request transfer from current owner"
+        //     },
+        //     accessory: {
+        //         type: "button",
+        //         text: {
+        //             type: "plain_text",
+        //             text: "Checkout",
+        //             emoji: true
+        //         },
+        //         value: book.title,
+        //         action: "checkout"
+        //     }
+        // });
     });
         
     try {
