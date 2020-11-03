@@ -21,6 +21,7 @@ mongoose.connect(`mongodb+srv://dino:${process.env.MONGO_PASSWORD}@cluster0.c4ci
     }).then(() => console.log("connected")).catch(err => console.log(err))
 const Book = require('./models/Book');
 
+// The Commands
 app.post('/donatebook', async (req, res) => {
     try {
         const {text, user_name} = await req.body; //user_id is also available
@@ -32,7 +33,7 @@ app.post('/donatebook', async (req, res) => {
     
         await book.save();
         console.log("entry:" + text);
-        res.json({message: "Yep"});
+        res.json({message: "Inserted " + text});
 
     } catch (error) {
         console.error(error);
@@ -44,7 +45,7 @@ const {makeLibrarySections} = require('./slackMessages/makeLibrarySections')
 app.post('/showlibrary', async (req, res) => {
     try {
         const books = await Book.find();
-        
+
         await bolt.client.chat.postMessage({
             token: process.env.SLACK_TOKEN,
             channel: req.body.channel_id,
