@@ -78,23 +78,24 @@ app.post('/showlibrary', async (req, res) => {
             }
         });
 
-        // blocks.push({
-        //     type: "section",
-        //     text: {
-        //         type: "mrkdwn",
-        //         text: "Request transfer from current owner"
-        //     },
-        //     accessory: {
-        //         type: "button",
-        //         text: {
-        //             type: "plain_text",
-        //             text: "Checkout",
-        //             emoji: true
-        //         },
-        //         value: book.title,
-        //         action: "checkout"
-        //     }
-        // });
+        blocks.push({
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: "Request transfer from current owner"
+            },
+            accessory: {
+                // can add a url for redirect after click
+                type: "button",
+                text: {
+                    type: "plain_text",
+                    text: "Checkout",
+                    emoji: true
+                },
+                value: book.title,
+                action_id: "checkout" + (Math.floor(Math.random() * 1000))
+            }
+        });
     });
         
     try {
