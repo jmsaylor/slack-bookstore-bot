@@ -45,7 +45,8 @@ app.post('/showlibrary', async (req, res) => {
 
     const books = await Book.find();
 
-    const blocks = [
+    //blocks is the container for messages how Slack likes it
+    const blocks = [ 
         {
             type: "header",
             text: {
@@ -65,10 +66,12 @@ app.post('/showlibrary', async (req, res) => {
                 type: "mrkdwn",
                 text: book.title
             },
-            text: {
-                type: "mrkdwn",
-                text: book.currentOwner
-            },
+            fields: [
+                {
+                    type: "mrkdwn",
+                    text: book.currentOwner
+                }
+            ],
             accessory: {
                 type: "button",
                 text: {
