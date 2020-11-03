@@ -39,7 +39,7 @@ app.post('/donatebook', async (req, res) => {
     }
 })
 
-const makeBookSections = require('./slackMessages/bookDisplay')
+const {makeBookSections} = require('./slackMessages/bookDisplay')
 
 app.post('/showlibrary', async (req, res) => {
     const fullResponse = [];
