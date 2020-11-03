@@ -66,15 +66,16 @@ app.post('/showlibrary', async (req, res) => {
                 type: "mrkdwn",
                 text: book.title
             },
-            fields: [
-                {
-                    type: "mrkdwn",
-                    text: book.currentOwner
-                }
-            ],
-            //TODO: put in accessory image
-        },
-        {
+        });
+        blocks.push({
+            type: "section",
+            text: {
+                type: "mrkdwn",
+                text: book.currentOwner
+            }
+        });
+
+        blocks.push({
             type: "section",
             text: {
                 type: "mrkdwn",
@@ -84,15 +85,15 @@ app.post('/showlibrary', async (req, res) => {
                 type: "button",
                 text: {
                     type: "plain_text",
-                    text: "Checkout"
+                    text: "Checkout",
+                    emoji: true
                 },
                 value: book.title,
                 action: "checkout"
             }
-        
         });
+    });
         
-    })
     try {
         await bolt.client.chat.postMessage({
             token: process.env.SLACK_TOKEN,
