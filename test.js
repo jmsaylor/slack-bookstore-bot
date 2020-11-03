@@ -1,7 +1,16 @@
-const {makeBookSections} = require("./slackMessages/bookDisplay")
-let book = {
-    title: "hello",
+const {makeLibrarySections} = require('./slackMessages/makeLibrarySections')
+let books = [
+    {
+    title: "Clean Code",
     currentOwner: "Joe"
-}
+    },
+    {
+        title: "Basic Java",
+        currentOwner: "Bill"
 
-console.log(makeBookSections(book));
+    }
+
+]
+
+console.log(
+    makeLibrarySections(books));

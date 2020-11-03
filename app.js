@@ -39,32 +39,16 @@ app.post('/donatebook', async (req, res) => {
     }
 })
 
-const {makeBookSections} = require('./slackMessages/bookDisplay')
+const {makeLibrarySections} = require('./slackMessages/makeLibrarySections')
 
 app.post('/showlibrary', async (req, res) => {
-    const fullResponse = [];
-
-    fullResponse.push({
-        type: "header",
-            text: {
-                type: "plain_text",
-                text: "School Library"
-            }
-    });
-
-    const books = await Book.find();
-
-    books.forEach(book => {
-        makeBookSections(book).forEach(block => {
-            fullResponse.push(block)
-        });    
-    });
-           
     try {
+        const books = await Book.find();
+        
         await bolt.client.chat.postMessage({
             token: process.env.SLACK_TOKEN,
             channel: req.body.channel_id,
-            blocks: fullResponse
+            blocks: makeLibrarySections(books)
         })
         res.json();
     } catch (error) {
