@@ -64,15 +64,25 @@ app.post('/showlibrary', async (req, res) => {
             text: {
                 type: "mrkdwn",
                 text: book.title
-            }
-        });
-        blocks.push({
-            type: "section",
+            },
             text: {
                 type: "mrkdwn",
                 text: book.currentOwner
+            },
+            accessory: {
+                type: "button",
+                text: {
+                    type: "plain_text",
+                    text: "Checkout"
+                },
+                value: book.title,
+                action: "checkout"
             }
         });
+        // blocks.push({
+        //     type: "section",
+            
+        // });
     })
     try {
         await bolt.client.chat.postMessage({
