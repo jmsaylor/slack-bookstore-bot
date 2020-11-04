@@ -62,9 +62,19 @@ app.post('/showlibrary', async (req, res) => {
 
 app.post('/checkout', async (req, res) => {
     try {
-        // const {user_id, value} = req.body;
-        const requestedBook = await JSON.parse(req.body['payload']['actions'][0]['value'])
-        console.log(requestedBook);
+        const payload = await JSON.parse(req.body.payload);
+        const bookTitle = payload.actions[0].value;
+        console.log(bookTitle);
+
+        const conversations = await bolt.client.conversations.list({
+            token: process.env.SLACK_TOKEN,
+            type: "im"
+        })
+
+        // await bolt.client.chat.postMessage({
+        //     token: process.env.SLACK_TOKEN,
+        //     channel: payload
+        // })
 
         res.json();
     } catch (error) {
