@@ -63,7 +63,8 @@ app.post('/showlibrary', async (req, res) => {
 app.post('/checkout', async (req, res) => {
     try {
         // const {user_id, value} = req.body;
-        console.log(await req.body.payload.actions);
+        const requestedBook = await JSON.parse(req.body['payload']['actions'][0]['value'])
+        console.log(requestedBook);
 
         res.json();
     } catch (error) {
