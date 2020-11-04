@@ -71,13 +71,23 @@ app.post('/checkout', async (req, res) => {
             type: "im"
         })
 
-        // await bolt.client.chat.postMessage({
-        //     token: process.env.SLACK_TOKEN,
-        //     channel: payload
-        // })
+        console.log(conversations);
+
+        await bolt.client.chat.postMessage({
+             token: process.env.SLACK_TOKEN,
+             channel: payload.user.id,
+             blocks: [{
+                        type: "section", 
+                        text: {
+                                type: "mrkdwn",
+                                text: `Hello, you are currently reading ${bookTitle}. If you're done, could you please contact ${payload.user.id} about transferring the title.`
+                                }
+                        }]
+                })
 
         res.json();
     } catch (error) {
         console.error(error);
     }
+
 })
