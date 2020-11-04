@@ -64,7 +64,7 @@ app.post('/checkout', async (req, res) => {
     try {
         // const {user_id, value} = req.body;
         //actions is an array
-        console.log(req.body.actions);
+        console.log(req.body.payload['actions'][0]);
 
         res.json();
     } catch (error) {
