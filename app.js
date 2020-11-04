@@ -19,6 +19,8 @@ mongoose.connect(`mongodb+srv://dino:${process.env.MONGO_PASSWORD}@cluster0.c4ci
     useNewUrlParser: true,
     useUnifiedTopology: true
     }).then(() => console.log("connected")).catch(err => console.log(err))
+
+//Data model through mongoose    
 const Book = require('./models/Book');
 
 // The Commands
@@ -57,3 +59,14 @@ app.post('/showlibrary', async (req, res) => {
     }
 
 });
+
+app.post('/checkout', async (req, res) => {
+    try {
+        // const {user_id, value} = req.body;
+        console.log(req.body);
+
+        res.json();
+    } catch (error) {
+        console.error(error);
+    }
+})

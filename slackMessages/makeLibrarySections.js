@@ -10,7 +10,6 @@ const makeLibrarySections = (books) => {
     },
 ];
 
-
     books.forEach((book) => {
 
         blocks.push({
@@ -53,7 +52,7 @@ const makeLibrarySections = (books) => {
                     emoji: true
                 },
                 value: book.title,
-                action_id: "checkout" + (Math.floor(Math.random() * 1000)) //TODO: better id system
+                action_id: "checkout" + (Math.floor(Math.random() * 100000)) //TODO: better id system
             }
         });
     });
