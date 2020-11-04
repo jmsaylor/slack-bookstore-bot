@@ -9,7 +9,11 @@ const Book = mongoose.model(
             type: Date,
             default: Date.now()
         },
-        currentOwner: String
+        currentOwner: String,
+        loanHistory: {
+            type: Array,
+            default: []
+        }
     })
 );
 
