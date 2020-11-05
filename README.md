@@ -1,24 +1,26 @@
-## Slack Bot Bookstore
+### Slack Bot Bookstore
 
-### Motivation
+## Motivation
 
-Reading is valuable, but books can be expensive. Sharing books (especially those in niche topics) allows those within any budget to read more books.
+_Reading is valuable, but books can be expensive._ Sharing books (especially those in niche topics) allows those with any budget to read more books. The Slack Bot that lives inside the existing conversations of existing communities is a convenient medium for users to also share their books.
 
-### Tech/Framework
+## Tech/Framework
 
-Bolt - Slack Bot messaging
-Express - incoming POST requests from Slack
-NodeJS
-MongoDB (Mongoose)
+**Bolt** is a package for working with the Slack API. **Express** handles the incoming POST requests set up in Slack. **Mongoose** keeps the database of listed books available for sharing.
 
-### Status
+## Status
 
-This project is in the first stages of development. There is currently an MVP with Slack slash commands `/showlibary` and `/donatebook` that also have interactive buttons.
+This project is in the first stages of development. /n There is currently an MVP with Slack _slash commands_ `/showlibary` and `/donatebook`. \n There is an additional route set up to receive POST requests for the interactive message elements.
 
-The development goal is to gather more information via a book API, validate information, provide a checkout and transfer action that utilizes Slack modal windows and dynamic options.
+The development goal is to gather more information via a book API, validate information, provide a more robust checkout and transfer action that utilizes Slack modal windows and dynamic options.
 
-### Screenshots
+## Screenshots
 
-### Installation
+(https://imgur.com/DjfXKl9)
+![POST from Slack](https://imgur.com/zp2Wq41)
+![Block Message Format](https://imgur.com/V0jXDNd)
+Format: ![Alt Text](url)
 
-### Contribution
+## Installation
+
+## Contribution
