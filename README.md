@@ -16,10 +16,11 @@ The development goal is to gather more information via a book API, validate info
 
 ## Screenshots
 
-(https://imgur.com/DjfXKl9)
-![POST from Slack](https://imgur.com/zp2Wq41)
-![Block Message Format](https://imgur.com/V0jXDNd)
-Format: ![Alt Text](url)
+![UI Example](https://imgur.com/DjfXKl9.jpg)
+![POST from Slack](https://imgur.com/zp2Wq41.jpg)
+![Block Message Format](https://imgur.com/V0jXDNd.jpg)
+
+<!-- Format: ![Alt Text](url) -->
 
 ## Installation
 
