@@ -18,9 +18,10 @@ The current development goal is use a book API to gather more information on tit
 
 Slack _slash commands_ are entered right into the chat and are just one way into the Bookstore App. Take a look at the [Slack API Docs](https://api.slack.com/) for the myriad of possibilities.<br/>
 ![UI Example](https://imgur.com/DjfXKl9.jpg)<br/>
-The "Bookstore Bot", that is the collection of POST requests we have set up in Slack and are processing on our end. This is one example.<br/>
+The "Bookstore Bot", that is the collection of POST requests we have set up in Slack and are processing on our end.<br/>
+This is one example.<br/>
 ![POST from Slack](https://imgur.com/zp2Wq41.jpg)<br/>
-The Slack API constructs messages from _blocks_ which is an array of objects with a certain type. You can look at the [Block Kit Docs](https://api.slack.com/block-kit/building) here.<br/>
+The Slack API constructs messages from _blocks_ which is an array of objects with a certain type.<br/> You can look at the [Block Kit Docs](https://api.slack.com/block-kit/building) for more information.<br/>
 ![Block Message Format](https://imgur.com/V0jXDNd.jpg)<br/>
 There are a large variety of block types that can be used to create very rich message responses. Additionally, the [interactive endpoint](https://api.slack.com/interactivity/handling) can be expanded to create more complex work-flows and really develop a useful bot in Slack.
 
@@ -38,5 +39,5 @@ If you'd like to help develop the Slack Bookstore Bot, then please send me a mes
 
 Always open to pull requests that will make this a useful tool for sharing books.
 
-Twitter, Discord, & Github: jmsaylor
+Twitter, Discord, & Github: jmsaylor<br/>
 Gmail: johnmsaylor@gmail.com
