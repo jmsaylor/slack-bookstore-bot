@@ -16,7 +16,7 @@ The current development goal is use a book API to gather more information on tit
 
 ## Screenshots
 
-Slack _slash commands_ are entered right into the chat and are just one way into the Bookstore App. Take a look at the [Slack API Docs](https://api.slack.com/) for the myriad of possibilities.  
+Slack _slash commands_ are entered right into the chat and are just one way into the Bookstore App. Take a look at the [Slack API Docs](https://api.slack.com/) for the myriad of possibilities.\  
 ![UI Example](https://imgur.com/DjfXKl9.jpg)
 The "Bookstore Bot", that is the collection of POST requests we have set up in Slack and are processing on our end. This is one example.
 ![POST from Slack](https://imgur.com/zp2Wq41.jpg)
