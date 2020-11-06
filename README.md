@@ -1,4 +1,8 @@
-### Slack Bot Bookstore
+## Slack Bot Bookstore
+
+## Overview
+
+The Slack Bot Bookstore allows users to add books they are willing to loan to others to a database. And, other Slack community members are able to view them and request to borrow them all from within the Slack platform.
 
 ## Motivation
 
