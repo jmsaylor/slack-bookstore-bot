@@ -2,7 +2,11 @@
 
 ## Overview
 
-This Slack Bot allows users to add books that they are willing to loan to others in a database. And, other Slack community members are able to view them and request to borrow them all from within the Slack platform.
+This Slack Bot allows users to:
+
+- add books to share in a database.
+- view available books
+- request to borrow
 
 ## Motivation
 
@@ -23,7 +27,7 @@ The current development goals are to:
 
 ## Usage
 
-From withing the Slack chat, slash commands are prepended with a `/`. You can [join](https://join.slack.com/t/garilovich/shared_invite/zt-inyo0lzm-odLLnOyDCSiGspe0NiiSAw) this Slack workspace to try it out or install it on your own to use the bot. The bot then proceeds to respond and interact in various ways.
+From withing the Slack message box, slash commands are prepended with a `/`. You can [join](https://join.slack.com/t/garilovich/shared_invite/zt-inyo0lzm-odLLnOyDCSiGspe0NiiSAw) this Slack workspace to try it out or install it on your own to use the bot. The bot then proceeds to respond and interact in various ways.
 
 ## Screenshots
 
@@ -48,7 +52,8 @@ app.post("/showlibrary", async (req, res) => {
 });
 ```
 
-The Slack API constructs messages from _blocks_ <br/> You can look at the [Block Kit Docs](https://api.slack.com/block-kit/building) for more information.<br/>
+**The Slack API constructs messages from _blocks_**
+You can look at the [Block Kit Docs](https://api.slack.com/block-kit/building) for more information.
 
 ```javascript
 type: "section",
@@ -92,7 +97,7 @@ Take a look at the [Slack API Docs](https://api.slack.com/) for the myriad of po
 You can join this Slack workspace where tests are being run:
 https://join.slack.com/t/garilovich/shared_invite/zt-inyo0lzm-odLLnOyDCSiGspe0NiiSAw
 
-Feel free to contact me about this project and submit any pull requests.
+Feel free to contact me about this project and submit any pull requests. I'd be happy to get anyone up to speed on the project.
 
 Twitter, Discord, & Github: jmsaylor
 Gmail: johnmsaylor@gmail.com
