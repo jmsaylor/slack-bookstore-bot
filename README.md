@@ -14,22 +14,22 @@ This project is built ontop of **NodeJS**. **Bolt** is a package for working wit
 
 ## Status
 
-This project is in the first stages of development. There is currently an MVP with Slack _slash commands_ `/showlibary` and `/donatebook`, and another route is set up to receive POST requests for the interactive message elements.
+This project is in the first stages of development. There is currently an MVP with Slack _slash commands_ `/showlibary` and `/donatebook`. Another route is set up to receive POST requests for the interactive message elements.
 
-The current development goals are to incorporate a book API to gather more information on titles.and provide a more robust checkout and transfer action that utilizes Slack modal windows and dynamic options.
+The current development goals are to:
+
+- Incorporate a book API to gather more information on titles.
+- Provide a more robust checkout and transfer action using Slack modals and dynamically loaded options.
 
 ## Usage
 
+From withing the Slack chat, slash commands are prepended with a `/`. You can [join](https://join.slack.com/t/garilovich/shared_invite/zt-inyo0lzm-odLLnOyDCSiGspe0NiiSAw) this Slack workspace to try it out or install it on your own to use the bot. The bot then proceeds to respond and interact in various ways.
+
 ## Screenshots
 
-Slack _slash commands_ are entered right into the chat and are just one way into the Bookstore App. Take a look at the [Slack API Docs](https://api.slack.com/) for the myriad of possibilities.<br/>
 ![UI Example](https://imgur.com/DjfXKl9.jpg)<br/>
 
 ## Code Examples
-
-The "Bookstore Bot", that is the collection of POST requests we have set up in Slack and are processing on our end.<br/>
-
-This is one example.<br/>
 
 ```javascript
 app.post("/showlibrary", async (req, res) => {
@@ -83,11 +83,16 @@ This app isn't ready for distribution so you'll have to manually install it and 
 
 Slack requires a public IP address to send POST requests to so it's useful to have a cloud instance where you can install this project. If not, you'll have to find a way to expose or _tunnel_ localhost.
 
-[Register your bot](https://api.slack.com/apps) with Slack and get the required TOKEN and SECRET. A MongoDB PASSWORD is also required for this implementation. The project is set up to configure from a `.env`file.
+[Register your bot](https://api.slack.com/apps) with Slack and get the required TOKEN and SECRET. A MongoDB PASSWORD is also required for this implementation. The project is set up to configure secrets using dotenv from a `.env`file.
 
 ## Contribution
 
+Take a look at the [Slack API Docs](https://api.slack.com/) for the myriad of possibilities.
+
+You can join this Slack workspace where tests are being run:
+https://join.slack.com/t/garilovich/shared_invite/zt-inyo0lzm-odLLnOyDCSiGspe0NiiSAw
+
 Feel free to contact me about this project and submit any pull requests.
 
-Twitter, Discord, & Github: jmsaylor<br/>
+Twitter, Discord, & Github: jmsaylor
 Gmail: johnmsaylor@gmail.com
